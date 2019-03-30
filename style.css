@@ -52,12 +52,13 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 50px;
 }
 
 a {
   line-height: 1.6;
   font-size: 20px;
-  color: #bbb;
+  color: #aaa;
 }
 
 .nav-active {
@@ -105,15 +106,22 @@ h1 {
 p {
   line-height: 1.6;
   font-size: 20px;
-  color: #bbb;
+  color: #aaa;
 }
 
 section {
   padding-top: 140px;
 }
 
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .about-container {
   width: 100%;
+  max-width: 1080px;
   display: flex;
   align-items: center;
 }
@@ -195,6 +203,7 @@ h3 {
   text-align: center;
   align-items: center;
   justify-content: center;
+  padding-bottom: 14px;
 }
 
 .icon-container > ul > li > i {
