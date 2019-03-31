@@ -39,6 +39,12 @@ nav {
   display: flex;
 }
 
+.nav-scrolled {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+  background: #fff;
+  height: 80px;
+}
+
 .nav-link {
   padding: 0 24px;
   font-size: 16px;
@@ -213,4 +219,12 @@ h3 {
 li > p {
   font-size: 14px;
   color: black;
+}
+
+.contact {
+  background: radial-gradient(50% 100%, #3f76bb 0%, #474b9a 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 160px 0;
+  width: 100%;
 }
