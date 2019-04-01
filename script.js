@@ -1,25 +1,63 @@
-$(window).on('load', function(e) {
-  $('body').addClass('loaded')
-})
-
-$(document).ready(function() {
-  $('.slider').slick({
-    fade: false,
-    lazyLoad: 'progressive',
-    arrows: false,
-    dots: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          fade: false
-        }
-      }
-    ]
+$(window).on('load', function() {
+  console.log('Thanks for checking out my website. If you would like to get in touch please contact me at alexfrancisdev@gmail.com')
+  console.table({
+    email: 'alexfrancisdev@gmail.com',
+    linkedIn: 'linkedin.com/in/alexfrancisdev',
+    github: 'github.com/alexfrancisdev'
   })
 })
 
-var typed = new Typed('.typed', {
+$(window).scroll(function() {
+  const scroll = $(window).scrollTop()
+  if (scroll >= 200) {
+    $('nav').addClass('nav-scrolled')
+  } else {
+    $('nav').removeClass('nav-scrolled')
+  }
+})
+
+const locations = [ '#home', '#about', '#skills', '#projects', '#contact' ]
+let currentLocation = 0
+let moving = false
+
+$(window).on('scroll', () => {
+  if(moving) return
+  if($(window).scrollTop() > $(locations[currentLocation]).offset().top) {
+    currentLocation ++
+    if(currentLocation > locations.length - 1) {
+      currentLocation = locations.length - 1
+    }
+    movePage(locations[currentLocation])
+  } else {
+    currentLocation --
+    if(currentLocation < 0) {
+      currentLocation = 0
+    }
+    movePage(locations[currentLocation])
+  }
+})
+
+
+$('a').on('click', function() {
+  if(moving) return
+  movePage(this.hash)
+})
+
+function movePage(location) {
+  moving = true
+  $('nav').children().removeClass('nav-active')
+  $(`#nav-${location.slice(1)}`).addClass('nav-active')
+  $('html, body').animate({
+    scrollTop: $(location).offset().top
+  }, 800, function(){
+    window.location.hash = location
+  })
+  setTimeout(() => {
+    moving = false
+  }, 1200)
+}
+
+const typed = new Typed('.typed', {
   loop: true,
   strings: [
     'loves building websites',
@@ -37,39 +75,3 @@ var typed = new Typed('.typed', {
   backSpeed: 50,
   backDelay: 1000
 })
-
-$('.slider').on('click', function(e) {
-  $(this).slick('slickNext');
-})
-
-// --------------------------------------------------------- //
-// SMOOTH SCROLL
-// --------------------------------------------------------- //
-// Select all links with hashes
-$('a[href*="#"]')
-  // Remove links that don't actually link to anything
-  .not('[href="#"]')
-  .not('[href="#0"]')
-  .click(function(event) {
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') ==
-        this.pathname.replace(/^\//, '') &&
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash)
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']')
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        event.preventDefault()
-        $('html, body').animate(
-          {
-            scrollTop: target.offset().top - 30
-          },
-          1500
-        )
-      }
-    }
-  })

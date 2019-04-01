@@ -103,6 +103,12 @@ h1 {
   color: #000;
 }
 
+.dot {
+  color: #3f76bb;
+  font-size: 60px;
+  font-weight: bold;
+}
+
 .her-subtitle {
   margin-bottom: 40px;
   max-width: 70%;
