@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
@@ -8,12 +10,12 @@
   <title>Alex Francis</title>
 </head>
 <body>
-  <nav>
-    <a class="nav-link" id="nav-about" href="#">About</a>
-    <a class="nav-link" id="nav-skills" href="#">Skills</a>
-    <a class="nav-link"  href="#"><img height="50px" src="logo-demo.png" alt="logo"></a>
-    <a class="nav-link" id="nav-projects" href="#">Projects</a>
-    <a class="nav-link" id="nav-contact" href="#">Contact</a>
+  <nav id="topnav">
+    <a class="nav-link nav-active" id="nav-about" href="#about">About</a>
+    <a class="nav-link" id="nav-skills" href="#skills">Skills</a>
+    <a class="nav-link" id="nav-home" href="#home"><img height="50px" src="logo-demo.png" alt="logo"></a>
+    <a class="nav-link" id="nav-projects" href="#projects">Projects</a>
+    <a class="nav-link" id="nav-contact" href="#contact">Contact</a>
   </nav>
   <div class="hero" id="home">
     <h1 class="hero-title">Hi, I'm Alex Francis<span class="dot">.</span></h1>
@@ -152,9 +154,17 @@
 
     </section>
     <section id="projects">
+      <div class="section-title">
+        <h2>My Projects</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+      </div>
 
     </section>
     <section class="contact" id="contact">
+      <div class="section-title">
+        <h2>Contact me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+      </div>
 
     </section>
 
@@ -167,6 +177,8 @@
   <script src="jQuery.js" charset="utf-8"></script>
   <script src="slick.js" charset="utf-8"></script>
   <script src="typed.js" charset="utf-8"></script>
+  <script src="scripts/jquery.nav.js"></script>
+  <script src="scripts/jquery.scrollTo.js"></script>
   <script src="script.js" charset="utf-8"></script>
 </body>
 </html>

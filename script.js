@@ -7,55 +7,29 @@ $(window).on('load', function() {
   })
 })
 
-$(window).scroll(function() {
+function checkScroll(){
   const scroll = $(window).scrollTop()
   if (scroll >= 200) {
     $('nav').addClass('nav-scrolled')
   } else {
     $('nav').removeClass('nav-scrolled')
   }
-})
-
-const locations = [ '#home', '#about', '#skills', '#projects', '#contact' ]
-let currentLocation = 0
-let moving = false
-
-$(window).on('scroll', () => {
-  if(moving) return
-  if($(window).scrollTop() > $(locations[currentLocation]).offset().top) {
-    currentLocation ++
-    if(currentLocation > locations.length - 1) {
-      currentLocation = locations.length - 1
-    }
-    movePage(locations[currentLocation])
-  } else {
-    currentLocation --
-    if(currentLocation < 0) {
-      currentLocation = 0
-    }
-    movePage(locations[currentLocation])
-  }
-})
-
-
-$('a').on('click', function() {
-  if(moving) return
-  movePage(this.hash)
-})
-
-function movePage(location) {
-  moving = true
-  $('nav').children().removeClass('nav-active')
-  $(`#nav-${location.slice(1)}`).addClass('nav-active')
-  $('html, body').animate({
-    scrollTop: $(location).offset().top
-  }, 800, function(){
-    window.location.hash = location
-  })
-  setTimeout(() => {
-    moving = false
-  }, 1200)
 }
+
+$(window).scroll(function() {
+  checkScroll()
+})
+
+$(document).ready(function() {
+  checkScroll()
+})
+
+$(document).ready(function(){
+  $('#topnav').onePageNav({
+    currentClass: 'nav-active',
+    scrollOffset: 0
+  })
+})
 
 const typed = new Typed('.typed', {
   loop: true,

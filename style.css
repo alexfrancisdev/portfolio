@@ -181,7 +181,7 @@ h2 {
 
 .block {
   border-right: 1px solid rgba(0,0,0,0.06);
-  padding: 60px 70px 40px;
+  padding: 5%;
   position: relative;
   text-align: left;
   -webkit-box-flex: 1;
@@ -233,4 +233,19 @@ li > p {
   overflow: hidden;
   padding: 160px 0;
   width: 100%;
+}
+
+
+@media only screen and (max-width: 830px) {
+  .block {
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .blocks {
+    flex-direction: column;
+  }
+  .block {
+    width: 100%;
+  }
 }
