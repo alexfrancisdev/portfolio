@@ -9,7 +9,7 @@ $(window).on('load', function() {
 
 function checkScroll(){
   const scroll = $(window).scrollTop()
-  if (scroll >= 200) {
+  if (scroll >= 150) {
     $('nav').addClass('nav-scrolled')
   } else {
     $('nav').removeClass('nav-scrolled')
