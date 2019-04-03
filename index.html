@@ -4,11 +4,19 @@
   <meta name="viewport" content="width=device-width">
   <meta name="viewport" content="initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
   <meta charset="utf-8" />
   <title>Alex Francis</title>
   <link rel='icon' href='./favicon.ico'>
+  <script src="jQuery.js" charset="utf-8"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="typed.js" charset="utf-8"></script>
+  <script src="scripts/jquery.nav.js"></script>
+  <script src="scripts/jquery.scrollTo.js"></script>
+  <script src="script.js" charset="utf-8"></script>
 </head>
 <body>
   <nav id="topnav">
@@ -159,25 +167,39 @@
         <h2>My Projects</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
       </div>
+      <div class="main-carousel" data-flickity='{ "freeScroll": true, "wrapAround": true }'>
+        <div class="carousel-cell">
+          <img class="carousel-image" src="images/placeholder-promo.jpg" alt="">
+          <div class="project-details">
+            <h3>Placeholder</h3>
+            <div class="button-container">
+              <button><i class="fab fa-github"></i> Github Repo</button><button><i class="fas fa-globe"></i> Launch Project</button>
+            </div>
+            <p>Timeframe: 1 week</p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <h2>Aldojo</h2>
+        </div>
+        <div class="carousel-cell">
+          <h2>Travelgram</h2>
+        </div>
+        <div class="carousel-cell">
+          <h2>Snake.js</h2>
+        </div>
+      </div>
 
     </section>
     <section class="contact" id="contact">
       <div class="section-title">
         <h2>Contact me</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
       </div>
-      <div class="form">
-        <form>
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-          <label for="fname">Email</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-          <label for="fname">Message</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        </form>
+      <div class="links">
+        <a href="mailto:alexfrancisdev@gmail.com"><i class="far fa-envelope"></i><span>alexfrancisdev@gmail.com</span></a>
+        <a href="https://www.linkedin.com/in/alexfrancisdev" target="_blank"><i class="fab fa-linkedin-in"></i><span>linkedin.com/in/alexfrancisdev</span></a>
+        <a href="https://github.com/alexfrancisdev/" target="_blank"><i class="fab fa-github"></i><span>github.com/alexfrancisdev</span></a>
       </div>
+
     </section>
 
   </div>
@@ -186,11 +208,5 @@
       <p class="copy">© <script>document.write(new Date().getFullYear())</script> - Alex Francis <span class="typed"></span><span class="typed-cursor" style="animation-iteration-count: 0;"></span></p>
     </div>
   </footer>
-  <script src="jQuery.js" charset="utf-8"></script>
-  <script src="slick.js" charset="utf-8"></script>
-  <script src="typed.js" charset="utf-8"></script>
-  <script src="scripts/jquery.nav.js"></script>
-  <script src="scripts/jquery.scrollTo.js"></script>
-  <script src="script.js" charset="utf-8"></script>
 </body>
 </html>

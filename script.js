@@ -7,6 +7,12 @@ $(window).on('load', function() {
   })
 })
 
+$('.main-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true
+})
+
 function checkScroll(){
   const scroll = $(window).scrollTop()
   if (scroll >= 150) {
