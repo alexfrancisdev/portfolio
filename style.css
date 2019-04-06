@@ -336,7 +336,7 @@ li > p {
 }
 
 @media only screen and (max-width: 400px) {
-  nav {
+  .nav-scrolled {
     height: 60px;
   }
   .button-container {
