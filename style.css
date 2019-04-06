@@ -322,6 +322,9 @@ li > p {
   .left {
     width: 100%;
   }
+  .about {
+    padding: 0 30px 0 30px;
+  }
 }
 @media only screen and (max-width: 720px) {
   .blocks {
@@ -334,7 +337,7 @@ li > p {
 
 @media only screen and (max-width: 400px) {
   nav {
-    height: 80px;
+    height: 60px;
   }
   .button-container {
     flex-direction: column;

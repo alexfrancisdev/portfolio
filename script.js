@@ -7,6 +7,8 @@ $(window).on('load', function() {
   })
 })
 
+
+
 $('.main-carousel').flickity({
   // options
   cellAlign: 'left',
